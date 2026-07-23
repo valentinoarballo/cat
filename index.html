@@ -1,27 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imagen de un Gato</title>
+    <title>Gato Arquitecto - Modo Épico</title>
     <style>
         body, html {
             margin: 0;
+            padding: 0;
             height: 100%;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0;
+            background-color: #000; /* Fondo negro para más dramatismo */
+            overflow: hidden; /* Evita barras de desplazamiento durante la locura */
         }
+        
         img {
-            min-width: 100%;
-            min-height: 100%;
+            /* Al forzar el ancho y alto sin object-fit, la imagen se estira y deforma */
+            width: 100vw;
+            height: 100vh;
+            
+            /* Animación que dura 10 segundos y se repite infinitamente */
+            animation: locuraEpica 10s infinite;
+        }
+
+        /* Definimos la animación épica */
+        @keyframes locuraEpica {
+            /* Del 0% al 80% (8 segundos), la imagen se queda quieta y deformada normalmente */
+            0%, 80% {
+                transform: scale(1) rotate(0deg);
+                filter: hue-rotate(0deg) contrast(1) invert(0);
+            }
+            /* A partir del 80% empieza el caos */
+            85% {
+                transform: scaleX(3) scaleY(0.2); /* Se estira muchísimo a los costados y se aplasta */
+                filter: hue-rotate(90deg) contrast(2) invert(0);
+            }
+            88% {
+                transform: scaleX(0.2) scaleY(3) rotate(45deg); /* Se comprime y se estira hacia arriba */
+                filter: hue-rotate(180deg) contrast(3) invert(1); /* Colores invertidos */
+            }
+            92% {
+                transform: scaleX(4) scaleY(4) rotate(720deg); /* Zoom gigante y doble vuelta ninja */
+                filter: hue-rotate(270deg) contrast(2) invert(0);
+            }
+            96% {
+                transform: scaleX(2) scaleY(0.5) rotate(-45deg) translateX(50px); /* Temblor */
+                filter: hue-rotate(360deg) contrast(1.5) blur(10px); /* Borroso */
+            }
+            98% {
+                transform: scaleX(2) scaleY(0.5) rotate(45deg) translateX(-50px); /* Temblor */
+                filter: hue-rotate(180deg) contrast(1.5) blur(5px);
+            }
+            /* Vuelve a la normalidad en el segundo 10 */
+            100% {
+                transform: scale(1) rotate(0deg);
+                filter: hue-rotate(0deg) contrast(1) invert(0) blur(0);
+            }
         }
     </style>
-    
 </head>
 <body>
-    <img src="435828282_1412917059362897_8793464938545881401_n.jpg" alt="Imagen de un gato">
+    <!-- Recuerda usar el nombre de archivo correcto de la imagen que guardaste -->
+    <img src="watermarked_img_1342062575347063613.png" alt="Un gato gigante interrumpiendo a ratones arquitectos construyendo una Torre Eiffel de frambuesas">
 </body>
 </html>
